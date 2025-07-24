@@ -15,6 +15,14 @@
 
 		<app.runtime>4.9.7</app.runtime>
 		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
+		<provider>MC</provider>
+		<environment>Sandbox</environment>
+		<target>Cloudhub-US-East-2</target>
+		
+		<businessGroup>tcs</businessGroup>
+		<releaseChannel>Edge</releaseChannel>
+		<replicas>1</replicas>
+		<vCores>0.1</vCores>
 	</properties>
 
 	<build>
@@ -29,6 +37,23 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				 <cloudhub2Deployment>
+      <uri>https://anypoint.mulesoft.com</uri>
+      <provider>${provider}</provider>
+      <environment>${environment}</environment>
+	  <businessGroup>${businessGroup}</businessGroup>
+      <target>${target}</target>
+	  <applicationName>${project.artifactId}</applicationName>
+      <muleVersion>${app.runtime}</muleVersion>
+      <username>${user}</username>
+      <password>${pass}</password>
+     <releaseChannel>${releaseChannel}</releaseChannel>
+      <replicas>${replicas}</replicas>
+      <vCores>${vCores}</vCores>
+      <deploymentSettings>
+        <generateDefaultPublicUrl>true</generateDefaultPublicUrl>
+      </deploymentSettings>
+    </cloudhub2Deployment>
 			</plugin>
 		</plugins>
 	</build>
