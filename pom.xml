@@ -40,10 +40,10 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				<connectedApp>
+<!-- 				<connectedApp>
  					 <clientId>${clientId}</clientId>
 					  <clientSecret>${clientSecret}</clientSecret>
-				   </connectedApp>
+				   </connectedApp> -->
 				 <cloudhub2Deployment>
       <uri>https://anypoint.mulesoft.com</uri>
       <provider>${provider}</provider>
