@@ -23,8 +23,8 @@
 		<releaseChannel>Edge</releaseChannel>
 		<replicas>1</replicas>
 		<vCores>0.1</vCores>
-<!-- 		<clientId>7b55bd6a12d44e86ba05009d356f297d</clientId>
-		<clientSecret>83dE6C7718c44103AEA8e64c55FA2bf1}</clientSecret> -->
+ 		<clientId>7b55bd6a12d44e86ba05009d356f297d</clientId>
+		<clientSecret>83dE6C7718c44103AEA8e64c55FA2bf1}</clientSecret> 
 	</properties>
 
 	<build>
@@ -39,11 +39,20 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<executions>
+                                 <execution>
+                                  <id>deploy-to-exchange</id>
+                                  <phase>deploy</phase>
+                                  <goals>
+                                 <goal>deploy-to-exchange</goal>
+                                </goals>
+				 </execution>
+				</executions>
 				<configuration>
-<!-- 				<connectedApp>
+			       <connectedApp>
  					 <clientId>${clientId}</clientId>
 					  <clientSecret>${clientSecret}</clientSecret>
-				   </connectedApp> -->
+				   </connectedApp> 
 				 <cloudhub2Deployment>
       <uri>https://anypoint.mulesoft.com</uri>
       <provider>${provider}</provider>
